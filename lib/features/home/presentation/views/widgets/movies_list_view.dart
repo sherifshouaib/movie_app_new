@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_new/models/result_model.dart';
-import 'package:movie_app_new/widgets/movies_card.dart';
+import 'package:movie_app_new/features/home/data/models/result_model.dart';
+import 'package:movie_app_new/features/home/presentation/views/widgets/movies_card.dart';
 
 class MoviesListView extends StatelessWidget {
    const MoviesListView({

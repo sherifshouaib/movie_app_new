@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:movie_app_new/models/result_model.dart';
-import 'package:movie_app_new/widgets/trending_card.dart';
+import 'package:movie_app_new/features/home/data/models/result_model.dart';
+import 'package:movie_app_new/features/home/presentation/views/widgets/trending_card.dart';
 
 class TrendingListView extends StatelessWidget {
    const TrendingListView({super.key,required this.results});

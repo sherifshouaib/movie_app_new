@@ -1,14 +1,15 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:movie_app_new/models/result_model.dart';
+import 'package:movie_app_new/features/home/data/models/result_model.dart';
 
 class MoviesService {
   Future<List<ResultModel>> getTrendingMovies() async {
     try {
       final response = await http.get(
         Uri.parse(
-            'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76'),
+          'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76',
+        ),
       );
 
       Map<String, dynamic> jsondata = jsonDecode(response.body);
@@ -36,10 +37,13 @@ class MoviesService {
     }
   }
 
-  Future<List<ResultModel>> getUpcomingNews() async {
+  Future<List<ResultModel>> getUpcomingMovies() async {
     try {
-      final response = await http.get(Uri.parse(
-          'https://api.themoviedb.org/3/movie/upcoming?api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76'));
+      final response = await http.get(
+        Uri.parse(
+          'https://api.themoviedb.org/3/movie/upcoming?api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76',
+        ),
+      );
 
       Map<String, dynamic> jsondata = jsonDecode(response.body);
 
@@ -70,7 +74,8 @@ class MoviesService {
     try {
       final response = await http.get(
         Uri.parse(
-            'https://api.themoviedb.org/3/movie/top_rated?api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76'),
+          'https://api.themoviedb.org/3/movie/top_rated?api_key=3fc3f4d6af6cc3f54f61ef42fabd9e76',
+        ),
       );
 
       Map<String, dynamic> jsondata = jsonDecode(response.body);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_new/views/trailer_view.dart';
+import 'package:movie_app_new/features/trailer/presentation/views/trailer_view.dart';
 
 class WatchTrailerButton extends StatelessWidget {
   final int movieId;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_new/models/result_model.dart';
-import 'package:movie_app_new/widgets/movies_list_view.dart';
+import 'package:movie_app_new/features/home/data/models/result_model.dart';
+import 'package:movie_app_new/features/home/presentation/views/widgets/movies_list_view.dart';
 
 class MoviesListViewBuilder extends StatefulWidget {
   const MoviesListViewBuilder({
@@ -24,7 +24,8 @@ class _MoviesListViewBuilderState extends State<MoviesListViewBuilder> {
 
   @override
   dispose() {
-    future = null;
+  //  future = null;
+    future.dispose();
     super.dispose();
   }
 

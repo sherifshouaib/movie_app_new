@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_new/models/result_model.dart';
-import 'package:movie_app_new/views/trending_movie.dart';
-import 'package:movie_app_new/widgets/constants.dart';
+import 'package:movie_app_new/features/home/data/models/result_model.dart';
+import 'package:movie_app_new/features/movie_details/presentation/views/trending_movie.dart';
+import 'package:movie_app_new/core/utils/constants.dart';
 
 class TrendingCard extends StatelessWidget {
   const TrendingCard({

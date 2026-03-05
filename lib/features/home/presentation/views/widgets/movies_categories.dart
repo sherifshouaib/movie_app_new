@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_new/widgets/movies_list_view_builder.dart';
+import 'package:movie_app_new/features/home/presentation/views/widgets/movies_list_view_builder.dart';
 
 class MoviesCategories extends StatelessWidget {
   MoviesCategories({super.key, required this.category, required this.getdata});
