@@ -22,7 +22,7 @@ class TrendingMovie extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               // ده المكون الثاني لل  SliverAppBar.large وهو يتكون من title: و  background:
               title: Text(
-                resultModel.title,
+                resultModel.title ?? ' ',
                 style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,

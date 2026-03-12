@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_app_new/features/home/data/models/result_model.dart';
 
@@ -20,14 +21,14 @@ class MoviesService {
 
       for (var result in results) {
         ResultModel movieModel = ResultModel(
-          backdropPath: result['backdrop_path'],
-          originalTitle: result['original_title'],
-          overview: result['overview'],
-          posterPath: result['poster_path'],
-          releaseDate: result['release_date'],
-          title: result['title'],
-          voteAverage: result['vote_average'],
-          id: result['id'],
+          backdropPath: result['backdrop_path'] ?? '',
+          originalTitle: result['original_title'] ?? '',
+          overview: result['overview'] ?? '',
+          posterPath: result['poster_path'] ?? '',
+          releaseDate: result['release_date'] ?? '',
+          title: result['title'] ?? '',
+          voteAverage: (result['vote_average'] as num).toDouble(),
+          id: result['id'] ?? 0,
         );
         movieslist.add(movieModel);
       }
@@ -53,19 +54,22 @@ class MoviesService {
 
       for (var result in results) {
         ResultModel movieModel = ResultModel(
-          backdropPath: result['backdrop_path'],
-          originalTitle: result['original_title'],
-          overview: result['overview'],
-          posterPath: result['poster_path'],
-          releaseDate: result['release_date'],
-          title: result['title'],
-          voteAverage: result['vote_average'],
-          id: result['id'],
+          backdropPath: result['backdrop_path'] ?? '',
+          originalTitle: result['original_title'] ?? '',
+          overview: result['overview'] ?? '',
+          posterPath: result['poster_path'] ?? '',
+          releaseDate: result['release_date'] ?? '',
+          title: result['title'] ?? '',
+          voteAverage: (result['vote_average'] as num).toDouble(),
+          id: result['id'] ?? 0,
         );
         movieslist.add(movieModel);
       }
+      debugPrint('Upcoming movies count: ${movieslist.length}');
       return movieslist;
     } catch (e) {
+      debugPrint(e.toString());
+
       return [];
     }
   }
@@ -86,14 +90,14 @@ class MoviesService {
 
       for (var result in results) {
         ResultModel movieModel = ResultModel(
-          backdropPath: result['backdrop_path'],
-          originalTitle: result['original_title'],
-          overview: result['overview'],
-          posterPath: result['poster_path'],
-          releaseDate: result['release_date'],
-          title: result['title'],
-          voteAverage: result['vote_average'],
-          id: result['id'],
+          backdropPath: result['backdrop_path'] ?? '',
+          originalTitle: result['original_title'] ?? '',
+          overview: result['overview'] ?? '',
+          posterPath: result['poster_path'] ?? '',
+          releaseDate: result['release_date'] ?? '',
+          title: result['title'] ?? '',
+          voteAverage: (result['vote_average'] as num).toDouble(),
+          id: result['id'] ?? 0,
         );
         movieslist.add(movieModel);
       }

@@ -3,12 +3,9 @@ import 'package:movie_app_new/features/home/data/models/result_model.dart';
 import 'package:movie_app_new/features/home/presentation/views/widgets/movies_list_view.dart';
 
 class MoviesListViewBuilder extends StatefulWidget {
-  const MoviesListViewBuilder({
-    super.key,
-    required this.getData,
-  });
+  const MoviesListViewBuilder({super.key, required this.getData});
 
-  final getData;
+  final Future<List<ResultModel>> getData;
   @override
   State<MoviesListViewBuilder> createState() => _MoviesListViewBuilderState();
 }
@@ -16,18 +13,20 @@ class MoviesListViewBuilder extends StatefulWidget {
 class _MoviesListViewBuilderState extends State<MoviesListViewBuilder> {
   List<ResultModel> results = [];
 
-  var future;
+  // var
+  late Future<List<ResultModel>> future;
   @override
   void initState() {
+    super.initState();
+
     future = widget.getData;
   }
 
-  @override
-  dispose() {
-  //  future = null;
-    future.dispose();
-    super.dispose();
-  }
+  // @override
+  // dispose() {
+  //   //  future = null;
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +35,11 @@ class _MoviesListViewBuilderState extends State<MoviesListViewBuilder> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           results = snapshot.data!;
-          return MoviesListView(
-            results: results,
-          );
+          return MoviesListView(results: results);
         } else if (snapshot.hasError) {
           return const ErrorMessage();
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );
@@ -52,9 +47,7 @@ class _MoviesListViewBuilderState extends State<MoviesListViewBuilder> {
 }
 
 class ErrorMessage extends StatelessWidget {
-  const ErrorMessage({
-    super.key,
-  });
+  const ErrorMessage({super.key});
   //final String message;
   @override
   Widget build(BuildContext context) {

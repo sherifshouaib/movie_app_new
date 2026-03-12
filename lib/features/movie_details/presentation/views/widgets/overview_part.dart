@@ -12,7 +12,7 @@ class OverviewPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      resultModel.overview,
+      resultModel.overview ?? ' ',
       style: const TextStyle(fontSize: 25, color: Colors.white),
     );
   }

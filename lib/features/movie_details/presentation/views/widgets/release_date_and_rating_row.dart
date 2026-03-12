@@ -1,13 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:movie_app_new/features/home/data/models/result_model.dart';
 
 class ReleaseDateAndRatingRow extends StatelessWidget {
-  const ReleaseDateAndRatingRow({
-    super.key,
-    required this.resultModel,
-  });
+  const ReleaseDateAndRatingRow({super.key, required this.resultModel});
 
   final ResultModel resultModel;
 
@@ -20,8 +15,9 @@ class ReleaseDateAndRatingRow extends StatelessWidget {
         Container(
           height: 33,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(10)),
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: Row(
@@ -35,7 +31,7 @@ class ReleaseDateAndRatingRow extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  resultModel.releaseDate,
+                  resultModel.releaseDate ?? ' ',
                   style: const TextStyle(
                     fontSize: 17,
                     color: Colors.white,
@@ -64,10 +60,7 @@ class ReleaseDateAndRatingRow extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Icon(
-                  Icons.star,
-                  color: Colors.yellow,
-                ),
+                const Icon(Icons.star, color: Colors.yellow),
                 Text(
                   '${resultModel.voteAverage.toStringAsFixed(1)}/10',
                   style: const TextStyle(
@@ -84,4 +77,3 @@ class ReleaseDateAndRatingRow extends StatelessWidget {
     );
   }
 }
-
